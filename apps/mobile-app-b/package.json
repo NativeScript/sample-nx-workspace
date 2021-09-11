@@ -1,0 +1,18 @@
+{
+  "name": "mobile-app-b",
+  "version": "1.0.0",
+  "main": "./src/app.ts",
+  "description": "NativeScript Application",
+  "license": "SEE LICENSE IN <your-license-filename>",
+  "repository": "<fill-your-repository-here>",
+  "scripts": {
+    "postinstall": "node ./tools/postinstall.js"
+  },
+  "dependencies": {
+    "@nativescript/core": "*"
+  },
+  "devDependencies": {
+    "@nativescript/android": "8.1.1",
+    "@nativescript/ios": "8.1.0"
+  }
+}

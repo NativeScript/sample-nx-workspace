@@ -1,6 +1,131 @@
 {
   "version": 2,
-  "projects": {},
+  "projects": {
+    "mobile-app-a": {
+      "projectType": "application",
+      "root": "apps/mobile-app-a/",
+      "sourceRoot": "apps/mobile-app-a/src",
+      "prefix": "",
+      "targets": {
+        "ios": {
+          "executor": "@nativescript/nx:build",
+          "options": {
+            "platform": "ios",
+            "noHmr": true
+          },
+          "configurations": {
+            "build": {
+              "copyTo": "./dist/build.ipa"
+            },
+            "prod": {
+              "combineWithConfig": "build:prod"
+            }
+          }
+        },
+        "android": {
+          "executor": "@nativescript/nx:build",
+          "options": {
+            "platform": "android",
+            "noHmr": true
+          },
+          "configurations": {
+            "build": {
+              "copyTo": "./dist/build.apk"
+            },
+            "prod": {
+              "combineWithConfig": "build:prod"
+            }
+          }
+        },
+        "clean": {
+          "executor": "@nativescript/nx:build",
+          "options": {
+            "clean": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/mobile-app-a/**/*.ts",
+              "apps/mobile-app-a/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/mobile-app-a/jest.config.js",
+            "tsConfig": "apps/mobile-app-a/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "apps/mobile-app-a/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "mobile-app-b": {
+      "projectType": "application",
+      "root": "apps/mobile-app-b/",
+      "sourceRoot": "apps/mobile-app-b/src",
+      "prefix": "sample-nx-workspace",
+      "targets": {
+        "ios": {
+          "executor": "@nativescript/nx:build",
+          "options": {
+            "platform": "ios",
+            "noHmr": true
+          },
+          "configurations": {
+            "build": {
+              "copyTo": "./dist/build.ipa"
+            },
+            "prod": {
+              "combineWithConfig": "build:prod"
+            }
+          }
+        },
+        "android": {
+          "executor": "@nativescript/nx:build",
+          "options": {
+            "platform": "android",
+            "noHmr": true
+          },
+          "configurations": {
+            "build": {
+              "copyTo": "./dist/build.apk"
+            },
+            "prod": {
+              "combineWithConfig": "build:prod"
+            }
+          }
+        },
+        "clean": {
+          "executor": "@nativescript/nx:build",
+          "options": {
+            "clean": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/mobile-app-b/**/*.ts",
+              "apps/mobile-app-b/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/mobile-app-b/jest.config.js",
+            "tsConfig": "apps/mobile-app-b/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "apps/mobile-app-b/src/test-setup.ts"
+          }
+        }
+      }
+    }
+  },
   "cli": {
     "defaultCollection": "@nrwl/workspace"
   }

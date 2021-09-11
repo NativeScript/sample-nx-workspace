@@ -23,13 +23,12 @@
       }
     }
   },
-  "targetDependencies": {
-    "build": [
-      {
-        "target": "build",
-        "projects": "dependencies"
-      }
-    ]
-  },
-  "projects": {}
+  "projects": {
+    "mobile-app-a": {
+      "tags": []
+    },
+    "mobile-app-b": {
+      "tags": []
+    }
+  }
 }

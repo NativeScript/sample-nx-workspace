@@ -1,19 +1,32 @@
 {
   "name": "sample-nx-workspace",
-  "version": "0.0.0",
-  "license": "MIT",
-  "scripts": {
-    "start": "nx serve",
-    "build": "nx build",
-    "test": "nx test"
-  },
   "private": true,
+  "workspaces": [
+      "apps/mobile-app-a",
+      "apps/mobile-app-b"
+  ],
+  "scripts": {
+    "clean": "nx run mobile-app-a:clean && nx run mobile-app-b:clean && npx rimraf node_modules yarn.lock package-lock.json && yarn",
+    "postinstall": "ns package-manager set yarn"
+  },
+  "dependencies": {
+    "@nativescript/core": "~8.1.1",
+    "nativescript-theme-core": "~1.0.4"
+  },
   "devDependencies": {
+    "@nativescript/nx": "^2.0.4",
     "@nrwl/cli": "12.9.0",
     "@nrwl/tao": "12.9.0",
     "@nrwl/workspace": "12.9.0",
     "@types/node": "14.14.33",
     "prettier": "^2.3.1",
-    "typescript": "~4.3.5"
+    "typescript": "~4.3.5",
+    "sass": "^1.32.0",
+    "@nativescript/webpack": "~5.0.0",
+    "@nativescript/types": "~8.1.1"
+  },
+  "nativescript-nx": {
+    "prefix": "sample-nx-workspace",
+    "framework": "vanilla"
   }
 }
