@@ -1,4 +1,4 @@
-## Nx workspace setup for multiple NativeScript apps
+## Nx workspace sample for multiple NativeScript apps
 
 This sample demonstrates using NativeScript 8.1+ cli capabilities to manage multiple NativeScript apps within an [Nx workspace](https://nx.dev).
 
